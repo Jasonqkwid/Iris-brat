@@ -1,31 +1,92 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Корзина — Ирис брат</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <style>
-    body { font-family: Arial; padding: 20px; background: #fff8f0; }
-    .container { max-width: 600px; margin: auto; background: white; padding: 30px; border-radius: 10px; box-shadow: 0 0 15px rgba(0,0,0,0.1); }
-    h1 { text-align: center; }
-    .item { border-bottom: 1px solid #ccc; padding: 10px 0; display: flex; justify-content: space-between; align-items: center; }
-    .item-name { font-size: 18px; }
-    .item-price { color: darkred; }
-    button { background: darkred; color: white; border: none; border-radius: 5px; padding: 5px 10px; cursor: pointer; }
-    .empty { text-align: center; color: #777; margin-top: 20px; }
-    a { display: block; text-align: center; margin-top: 20px; text-decoration: none; color: darkred; }
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #fff8f0;
+    }
+
+    .navbar {
+      background: darkred;
+      color: white;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .navbar h1 {
+      margin: 0;
+      font-size: 20px;
+    }
+
+    .navbar a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 40px auto;
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    }
+
+    .item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 0;
+      border-bottom: 1px solid #eee;
+    }
+
+    .item-name {
+      font-size: 18px;
+    }
+
+    .item-price {
+      color: darkred;
+    }
+
+    button {
+      background: darkred;
+      color: white;
+      border: none;
+      padding: 6px 12px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .empty {
+      text-align: center;
+      color: #777;
+      margin: 30px 0;
+    }
   </style>
 </head>
 <body>
-  <div class="container">
+
+  <div class="navbar">
     <h1>Корзина</h1>
-    <div id="cartItems"></div>
-    <a href="index.html">Назад к покупкам</a>
+    <a href="index.html">Назад</a>
   </div>
+
+  <div class="container" id="cartItems"></div>
 
   <script>
     function loadCart() {
-      let cart = JSON.parse(localStorage.getItem("cart")) || [];
+      const cart = JSON.parse(localStorage.getItem("cart")) || [];
       const container = document.getElementById("cartItems");
+
       if (cart.length === 0) {
         container.innerHTML = '<p class="empty">Корзина пуста</p>';
         return;
@@ -52,5 +113,6 @@
 
     loadCart();
   </script>
+
 </body>
 </html>
