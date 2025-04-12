@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Ирис брат</title>
+  <style>
+    body { font-family: Arial; padding: 20px; background: #fff8f0; }
+    .container { max-width: 500px; margin: auto; background: white; padding: 30px; border-radius: 10px; box-shadow: 0 0 15px rgba(0,0,0,0.1); text-align: center; }
+    .price { font-size: 24px; color: darkred; margin: 10px 0; }
+    button { padding: 10px 20px; background: darkred; color: white; border: none; border-radius: 5px; cursor: pointer; margin: 5px; }
+    a { display: inline-block; margin-top: 15px; text-decoration: none; color: darkred; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Пеперони</h1>
+    <p class="price">666 рублей</p>
+    <button onclick="addToCart()">Добавить в корзину</button>
+    <a href="cart.html">Перейти в корзину</a>
+  </div>
+
+  <script>
+    function addToCart() {
+      const item = { name: "Пеперони", price: 666 };
+      let cart = JSON.parse(localStorage.getItem("cart")) || [];
+      cart.push(item);
+      localStorage.setItem("cart", JSON.stringify(cart));
+      alert("Товар добавлен в корзину!");
+    }
+  </script>
+</body>
+</html>
