@@ -1,40 +1,40 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8" />
-  <title>Ирис брат</title>
+  <meta charset="UTF-8">
+  <title>Мир брат</title>
   <style>
-    body { font-family: sans-serif; padding: 20px; background: #fdfdfd; }
-    nav { padding: 1rem; background: #222; color: white; margin-bottom: 2rem; }
+    body { font-family: sans-serif; padding: 20px; background: #f4f4f4; }
+    nav { background: #222; padding: 1rem; margin-bottom: 2rem; }
     nav a { color: white; margin-right: 1rem; text-decoration: none; }
-    .product { border: 1px solid #ccc; padding: 20px; border-radius: 8px; max-width: 300px; }
-    button { background: #222; color: white; border: none; padding: 10px; cursor: pointer; border-radius: 5px; margin-top: 10px; }
+    .product { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); max-width: 300px; }
+    button { margin-top: 10px; background: #222; color: white; border: none; padding: 10px; border-radius: 5px; cursor: pointer; }
     button:hover { background: #444; }
   </style>
 </head>
 <body>
 
-  <nav>
-    <a href="index.html">Главная</a>
-    <a href="cart.html">Корзина</a>
-  </nav>
+<nav>
+  <a href="index.html">Главная</a>
+  <a href="cart.html">Корзина</a>
+</nav>
 
-  <h1>Ирис брат</h1>
+<h1>Мир брат</h1>
 
-  <div class="product">
-    <h2>Пицца "Пеперони"</h2>
-    <p>Цена: 666 рублей</p>
-    <button onclick="addToCart()">Добавить в корзину</button>
-  </div>
+<div class="product">
+  <h2>Пицца "Пепперони"</h2>
+  <p>Цена: 666 рублей</p>
+  <button onclick="addToCart()">Добавить в корзину</button>
+</div>
 
-  <script>
-    function addToCart() {
-      const cart = JSON.parse(localStorage.getItem('cart') || '[]');
-      cart.push({ name: 'Пеперони', price: 666 });
-      localStorage.setItem('cart', JSON.stringify(cart));
-      alert('Добавлено в корзину!');
-    }
-  </script>
+<script>
+  function addToCart() {
+    const cart = JSON.parse(localStorage.getItem('cart') || '[]');
+    cart.push({ name: 'Пепперони', price: 666 });
+    localStorage.setItem('cart', JSON.stringify(cart));
+    alert("Добавлено в корзину!");
+  }
+</script>
 
 </body>
 </html>
